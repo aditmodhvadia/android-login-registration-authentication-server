@@ -11,7 +11,7 @@ const config = require('./config/config.json');
 
 module.exports = router => {
 
-	router.get('/', (req, res) => res.end('Welcome to Learn2Crack !'));
+	router.get('/', (req, res) => res.end('Welcome to Simple Mobile Apps !'));
 
 	router.post('/authenticate', (req, res) => {
 
@@ -29,7 +29,7 @@ module.exports = router => {
 
 				const token = jwt.sign(result, config.secret, { expiresIn: 1440 });
 			
-				res.status(result.status).json({ message: result.message, token: token });
+				res.status(result.status).json({ name: result.name, message: result.message, token: token });
 
 			})
 
